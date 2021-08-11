@@ -12,10 +12,17 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
-import CourseHome from "./components/CourseHome";
+import CourseCardMat from "./controller/CourseCardMat";
+import CourseTable from "./controller/CourseTable"
+import CourseCard from "./controller/CourseCard"
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
+import Course from "./controller/Course";
+
+import ListApp from "./components/ListApp";
+import Cards from "./controller/Card";
+import CourseMain from "./controller/CourseTable";
 
 class App extends Component {
   constructor(props) {
@@ -137,11 +144,11 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/home"]} component={Home} />
+            <Route exact path={["/", "/home"]} component={CourseCardMat} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/courses" component={CourseHome} />
+            <Route exact path="/courses" component={CourseCard} />
 
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
