@@ -11,6 +11,15 @@ class UserServiceControl {
     getCourses(){
         return axios.get(COURSE_REST_API_URL + 'getallcourses');
     }
+
+    getCourseById(){
+        return axios.get(COURSE_REST_API_URL + 'coursebyid');
+    }
+
+    getCourseByByName(){
+        return axios.get(COURSE_REST_API_URL + 'coursebyname')
+    }
+
 }
 
 export default new UserServiceControl();

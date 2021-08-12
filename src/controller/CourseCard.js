@@ -15,7 +15,7 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import { GridList } from '@material-ui/core';
+import { GridList, GridListTile } from '@material-ui/core';
 
 
 
@@ -84,23 +84,23 @@ class CourseCard extends React.Component {
             </div>
           </Container>
           </div>
-          <Container container paddingTop={8} paddingBottom= {8} maxWidth="md">
-          <Grid container spacing={4}>
-          <Grid xs={12} sm={6} md={4}>
+          <Container container paddingtop={8} paddingbottom= {8} maxWidth="md">
+          {/* <Grid container spacing={4}> */}
+          {/* <Grid xs={12} sm={6} md={4}> */}
 
                   
                   
     
-                    <GridList cols={4}>
+                    
                         
                         {courses.map(course => <Card key={course.cid} course={course} />)}
                          
-                    </GridList>
+                    
                
                     
 
-                </Grid>
-                </Grid>
+                {/* </Grid> */}
+                {/* </Grid> */}
                 </Container>
                 </main>
 

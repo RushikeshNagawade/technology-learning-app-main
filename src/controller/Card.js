@@ -1,40 +1,3 @@
-// import React from 'react';
-// // import Course from './Course';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// // import { Card, Button } from 'react-bootstrap';
-
-
-
-
-// const Card = (props) => {
-//   const {course} = props;
-//   return (
-//           <div class="row">
-//             <div class="col-sm-5">
-//             <div class="card" styles=" width: 18rem;">
-
-//                 <img class="card-img-top" src="" alt="NO PHOTO"  />
-                
-//                 <div div class="card-body" >
-//                     {/* <span >{course.cid}</span> */}
-//                     <h5 class="card-title">{course.cname}</h5>
-//                     <p class="card-text">{course.courseDetails}</p>
-//                     {/* <p >{items.overview}</p> */}
-//                     {/* <a href="https://www.themoviedb.org/movie/" className="movie-container__more">MORE</a> */}
-
-                    
-
-
-//                     </div>
-//                   </div>
-//                 </div>
-//             </div>
-    
-//   )
-// }
-
-// export default Card;
-
 import React from 'react';
 // import Course from './Course';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -132,7 +95,7 @@ const Cards = (props) => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
+                    <Button variant="contained" size="small" color="primary" >
                       View
                     </Button>
                     {/* <Button size="small" color="primary">
@@ -154,3 +117,54 @@ const Cards = (props) => {
 }
 
 export default Cards;
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------
+
+// import React from 'react';
+// // import Course from './Course';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// // import { Card, Button } from 'react-bootstrap';
+
+
+
+
+// const Card = (props) => {
+//   const {course} = props;
+//   return (
+//           <div class="row">
+//             <div class="col-sm-5">
+//             <div class="card" styles=" width: 18rem;">
+
+//                 <img class="card-img-top" src="" alt="NO PHOTO"  />
+                
+//                 <div div class="card-body" >
+//                     {/* <span >{course.cid}</span> */}
+//                     <h5 class="card-title">{course.cname}</h5>
+//                     <p class="card-text">{course.courseDetails}</p>
+//                     {/* <p >{items.overview}</p> */}
+//                     {/* <a href="https://www.themoviedb.org/movie/" className="movie-container__more">MORE</a> */}
+
+                    
+
+
+//                     </div>
+//                   </div>
+//                 </div>
+//             </div>
+    
+//   )
+// }
+
+// export default Card;
+
+
+
+
+

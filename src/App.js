@@ -23,6 +23,7 @@ import Course from "./controller/Course";
 import ListApp from "./components/ListApp";
 import Cards from "./controller/Card";
 import CourseMain from "./controller/CourseTable";
+import CourseSearch from "./controller/CourseSearch";
 
 class App extends Component {
   constructor(props) {
@@ -82,7 +83,7 @@ class App extends Component {
             </li>
 
             <li className="nav-item">
-                <Link to={"/courses"} className="nav-link">
+                <Link to={"/allcourses"} className="nav-link">
                   All Courses
                 </Link>
               </li>
@@ -144,11 +145,11 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/home"]} component={CourseCardMat} />
+            <Route exact path={["/", "/home"]} component={CourseSearch} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/courses" component={CourseCard} />
+            <Route exact path="/allcourses" component={CourseCard} />
 
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />

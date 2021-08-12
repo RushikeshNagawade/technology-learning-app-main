@@ -69,3 +69,11 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+
+.search-row{
+  max-width: 100px;
+    background-color: aliceblue;
+    padding: 3px;
+    margin: auto;
+    margin-top:8px
+}

@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import { render } from '@testing-library/react';
 
 function Copyright() {
   return (
@@ -62,9 +63,12 @@ const useStyles = makeStyles((theme) => ({
 const cards = [1, 2, 3, 4, 5];
 
 export default function Album() {
-  const classes = useStyles();
+    const classes = useStyles();
+
+  // add render here
 
   return (
+    
     <React.Fragment>
       <CssBaseline />
       <AppBar position="relative">
@@ -149,8 +153,10 @@ export default function Album() {
       </footer>
       {/* End footer */}
     </React.Fragment>
+    
   );
 }
+
 
 
 
