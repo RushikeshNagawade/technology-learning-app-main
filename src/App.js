@@ -7,7 +7,7 @@ import AuthService from "./services/auth.service";
 
 import Login from "./components/login.component";
 import Register from "./components/register.component";
-import Home from "./components/home.component";
+// import Home from "./components/home.component";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
@@ -24,6 +24,11 @@ import ListApp from "./components/ListApp";
 import Cards from "./controller/Card";
 import CourseMain from "./controller/CourseTable";
 import CourseSearch from "./controller/CourseSearch";
+import CourseView from "./controller/CourseView";
+import View from "./controller/View";
+import Test from "./controller/Test";
+import CourseHome from "./controller/CourseHome";
+import Home from "./components/pages/Home";
 
 class App extends Component {
   constructor(props) {
@@ -145,7 +150,7 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/home"]} component={CourseSearch} />
+            <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
