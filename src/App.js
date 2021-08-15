@@ -29,6 +29,8 @@ import View from "./controller/View";
 import Test from "./controller/Test";
 import CourseHome from "./controller/CourseHome";
 import Home from "./components/pages/Home";
+import ABOUT from "./components/pages/About";
+import CONTACT from "./components/pages/Contact";
 
 class App extends Component {
   constructor(props) {
@@ -155,6 +157,8 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/allcourses" component={CourseCard} />
+            <Route exact path="/aboutus" component={ABOUT} />
+            <Route exact path="/contact" component={CONTACT} />
 
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />

@@ -15,7 +15,7 @@ import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
 import Link from '@material-ui/core/Link';
 import GridList from '@material-ui/core/GridList';
-import image from '../media/html-image.jpg'
+
 
 
 

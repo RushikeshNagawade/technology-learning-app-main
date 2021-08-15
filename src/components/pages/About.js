@@ -1,20 +1,58 @@
+import { Container, Typography } from '@material-ui/core';
 import React from 'react';
-import '../../App.css';
-import HeroSection1 from '../HeroSection1';
 
-// export default function About() {
-//   return <h1 className='About'>ABOUT</h1>;
+import { Grid } from '@material-ui/core';
+import Image from '../../images/about.jpg'
 
-  function ABOUT() {
-    return (
-      <>
-        <HeroSection1 />
+
+
+
+  // function ABOUT() {
+  //   return (
+  //     <>
+  //       <HeroSection1 />
         
-        {/* <Footer /> */}
-      </>
-    );
-  }
+  //       {/* <Footer /> */}
+  //     </>
+  //   );
+  // }
   
-  export default ABOUT;
+  // export default ABOUT;
+
+  const styles = {
+    paperContainer: {
+        backgroundImage: `url(${Image})`,
+       
+        backgroundSize: 'cover',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        justifyContent: "center"
+        
+        
+      
+    }
+  };
+
+  class ABOUT extends React.Component {
  
-  
+    render() {
+      return (
+        <Grid container style={styles.paperContainer}>
+          <Typography variant='h1'>
+            About Us
+          </Typography>
+          <Typography>
+            <Container color="text.primary">
+          <Typography variant='h6' >UpMaster's is a platform that allows instructors to build online courses on their preferred topics.</Typography>
+          <Typography variant='h6'> Using UpMaster's course development tools, they can upload videos and live classes to create courses. </Typography>
+          <Typography variant='h6'>Instructors can also engage and interact with users via online discussion boards.</Typography>
+          
+          <Typography variant='h6'>It is a massive open online course provider for learners, and its learning experience arranges coursework</Typography>  
+          <Typography variant='h6'> into a series of modules and lessons that can include videos, text notes and assessment tests.</Typography>
+          </Container>
+          </Typography>
+        </Grid>
+      );
+    }
+  }
+  export default ABOUT;

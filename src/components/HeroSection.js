@@ -24,7 +24,6 @@ const styles = {
 function HeroSection() {
   return (
     <Grid container 
-
       style={styles.paperContainer}>
       
       <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>want to become a "Master" ?</Typography>
