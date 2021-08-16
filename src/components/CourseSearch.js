@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Table,Form,Container, FormControl } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee,faEdit,faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faEye,faEdit,faTrash } from '@fortawesome/free-solid-svg-icons'
 import {
     Link
   } from 'react-router-dom'
   import { Navbar, Nav } from 'react-bootstrap'
 import axios from 'axios';
-import CourseServiceControl from './CourseServiceControl';
+import CourseServiceControl from '../controller/CourseServiceControl';
 // const base_url="http://localhost:8082/";
-import Card from './Card';
+import Card from '../controller/Card';
 
 
 class CourseSearch extends Component {
@@ -37,40 +37,26 @@ class CourseSearch extends Component {
                 {
                     this.setState({noData:true,searchData:null})
                 }
-                // const { query } = this.state;
-                // const filteredData = data.filter(item => {
-                //     return item.cname.toLowerCase().includes(query.toLowerCase());
-                //   });
+                
             })
         })
     }
 
+    getFinalCourse(cid){
+        console.log(cid);
+        //this.props.history.push(`/viewcourse/401`);
+        this.props.history.push(`/viewcourse/${cid}`);
+    }
     
 
 
-    
-    // delete(id)
-    // {
-    //     fetch('http://localhost:8082/deletecourse/'+id,
-    //     {
-    //         method: "DELETE",
-    //         // headers:{
-    //         //     'Content-Type':'application/json'
-    //         // },
-    //     }).then((result)=>{
-    //         result.json().then((resp)=>{
-    //             alert("Course has heen Deleted")
-    //             this.search(this.state.lastSearch)
-    //         })
-    //     })
-    // }
 
     render() {
         
         return (
             <Container>
                 <Navbar />
-                <h1>Course Search</h1>
+                
                
                 <FormControl type="text"  onChange={(event) => this.search(event.target.value.toLowerCase())}   placeholder="Search course" />
                 <div>
@@ -95,8 +81,8 @@ class CourseSearch extends Component {
                                                 <td>{item.cname}</td>
                                                 <td>{item.courseDetails}</td>
                                                 {/* <td>{item.cfee}</td> */}
-                                                <td><Link to={"/view/"+item.cid}><FontAwesomeIcon icon={faEdit} color="orange" /> </Link>
-                                                <span onClick={()=>this.delete(item.id)}><FontAwesomeIcon icon={faTrash} color="green" /> </span>
+                                                <td><Link onClick={()=>this.getFinalCourse(item.cid)}><FontAwesomeIcon icon={faEye} color="orange" /> </Link>
+                                                
                                                 </td>
                                             </tr>
                                     )
@@ -112,7 +98,7 @@ class CourseSearch extends Component {
                         // :""
                     }
                     {
-                        this.state.noData?<h3>No Data Found</h3>:null
+                        this.state.noData?<h3>Unfortunately we do not have this course .</h3>:null
                     } 
                 </div>
 
