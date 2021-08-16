@@ -38,7 +38,7 @@ class CONTACT extends Component {
   render() {
     return (
       <Grid container style={styles.paperContainer} >
-        <Typography variant='h1'>
+        <Typography variant='h1' align="center">
             Contact Us
           </Typography>
           <Typography gutterBottom variant="h5" align="center" color="textSecondary" paragraph>Contact Number : +91 9999888810</Typography>  

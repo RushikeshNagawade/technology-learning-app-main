@@ -38,7 +38,7 @@ import Image from '../../images/about.jpg'
     render() {
       return (
         <Grid container style={styles.paperContainer}>
-          <Typography variant='h1'>
+          <Typography variant='h1' align="center">
             About Us
           </Typography>
           <Typography>

@@ -1,14 +1,14 @@
 import React from 'react';
 import '../App.css';
 // import { Button } from './Button';
-import './HeroSection.css';
+
 import { Button } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import { Container } from '@material-ui/core';
 import { Paper } from '@material-ui/core';
 import Image from '../images/background3.jpg'
 import { Grid } from '@material-ui/core';
-
+import { Link } from 'react-router-dom';
 
 const styles = {
   paperContainer: {
@@ -30,13 +30,15 @@ function HeroSection() {
       <Container>
       <Typography gutterBottom variant="h5" align="center" color="textPrimary" paragraph>Lets do it</Typography>
       </Container>
-      <div>
+      <div align="center">
               <Grid container spacing={4} justifyContent="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Link to="./login"><Button variant="contained" color="primary">
                     Sign in
                   </Button>
+                  </Link>
                 </Grid>
+                
                 <marquee width="90%" direction="left" height="100px" >
                    <Typography variant="h6">Start your learning journey today with Upmaster</Typography>
                 </marquee>
