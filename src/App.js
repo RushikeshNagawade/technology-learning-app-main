@@ -159,6 +159,7 @@ class App extends Component {
             <Route exact path="/allcourses" component={CourseCard} />
             <Route exact path="/aboutus" component={ABOUT} />
             <Route exact path="/contact" component={CONTACT} />
+            <Route exact path="/coursehome" component={CourseHome} />
 
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />

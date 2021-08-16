@@ -38,7 +38,7 @@ function HeroSection() {
                   </Button>
                 </Grid>
                 <marquee width="90%" direction="left" height="100px" >
-                   Start your learning journey today with Upmaster
+                   <Typography variant="h6">Start your learning journey today with Upmaster</Typography>
                 </marquee>
                 </Grid>
       </div>

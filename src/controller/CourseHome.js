@@ -4,10 +4,26 @@ import { Card, Col, Row, Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faList } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import { Container } from 'react-bootstrap';
+// import { Container } from 'react-bootstrap';
 import ReactPlayer from 'react-player'
+import { Button, Container, CssBaseline, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { spacing } from '@material-ui/system';
 
-
+const styles = {
+    paperContainer: {
+        
+       
+        backgroundSize: 'cover',
+        flexDirection: 'column',
+        
+        justifyContent: "center"
+        
+        
+      
+    }
+  };
 
 export default class CourseHome extends Component {
 
@@ -19,7 +35,7 @@ export default class CourseHome extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8082/coursebyname/html")
+        axios.get("http://localhost:8082/coursebyname/java")
         .then(response => response.data)
         .then((data) => {
             this.setState({course : data});
@@ -32,26 +48,28 @@ export default class CourseHome extends Component {
                {
                    this.state.course.map((item) => {
                        return (
-                           <Container>
+                           <React.Fragment>
+                            <CssBaseline/>
+                           <Grid container style={styles.paperContainer}>
                                
-                               <Container className='p-5'>
-                               <Row className="justify-content-md-center">
-                                   <Col md="auto">
-                               <ReactPlayer url={item.videoURL} />
-                                    </Col>
-                                </Row>
-                               </Container>
                                
-                               <Container  className="p-3 m-3 bg-light text-dark border border-dark">
-                                   <Row className="justify-content-md-center">
-                                   <Col md="auto">
-                               <p className="text-monospace">{item.description}</p>
-                               </Col>
-                               </Row>
+                               <Container align="center">
+                               <ReactPlayer controls={true} className="react-player" url={item.videoURL} />
                                </Container>
                                
                                
-                            </Container>
+                               <Grid container >
+                                   
+                               <Typography gutterBottom variant="h6" align="left" color="textPrimary" paragraph >{item.description}</Typography>
+                               
+                               </Grid>
+                               <Typography gutterBottom variant="h6" align="left" color="textPrimary" paragraph>
+                                   visit documentation for more information:- {item.material}
+                                </Typography>
+                               
+                            </Grid>
+                            
+                            </React.Fragment>
                        );
                    })
                }

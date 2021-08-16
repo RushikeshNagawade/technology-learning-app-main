@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import Image from '../../images/contact.jpg'
+import Image from '../../images/contact5.jpg'
 import { Grid } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import { TypographyStyle } from '@material-ui/core';
