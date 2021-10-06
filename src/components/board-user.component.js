@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import UserService from "../services/user.service";
+//import { Switch, Route, Link } from "react-router-dom";
 import EventBus from "../common/EventBus";
 
 
@@ -9,7 +10,8 @@ export default class BoardUser extends Component {
     super(props);
 
     this.state = {
-      content: ""
+      content: "",
+      currentUser: ''
     };
   }
 
@@ -38,12 +40,20 @@ export default class BoardUser extends Component {
   }
 
   render() {
+    //const { currentUser } = this.state;
     return (
       <div className="container">
-        <header className="jumbotron">
+        {/* <header className="jumbotron">
           <h3>{this.state.content}</h3>
-        </header>
-        
+        </header> */}
+
+         {/* {currentUser && (
+              <li className="nav-item">
+                <Link to={"/usercreate"} className="nav-link">
+                  Create Profile
+                </Link>
+              </li>
+            )} */}
       </div>
     );
   }

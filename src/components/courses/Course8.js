@@ -32,7 +32,7 @@ export default class Course8 extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8082/coursebyname/sql")
+        axios.get("http://localhost:8082/api/coursebyname/sql")
         .then(response => response.data)
         .then((data) => {
             this.setState({course : data});

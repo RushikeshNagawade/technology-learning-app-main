@@ -1,22 +1,22 @@
 import React from 'react';
 // import UserServiceControl from '../services/UserServiceControl';
-import CourseServiceControl from './CourseServiceControl';
+import courseservice from '../services/courseservice';
 // import { Card } from 'react-bootstrap';
 import Card from './Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+// import CardActions from '@material-ui/core/CardActions';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 // import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+//import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import { GridList, GridListTile } from '@material-ui/core';
-import { spacing } from '@material-ui/system';
+// import Button from '@material-ui/core/Button';
+// import { GridList, GridListTile } from '@material-ui/core';
+// import { spacing } from '@material-ui/system';
 
 
 function Copyright() {
@@ -44,7 +44,7 @@ class CourseCard extends React.Component {
     }
     
     componentDidMount() {
-        CourseServiceControl.getCourses().then((response) => {
+        courseservice.getCourses().then((response) => {
             this.setState({
                 isLoaded: true,
                 courses: response.data
@@ -104,13 +104,10 @@ class CourseCard extends React.Component {
 
                   
                   
-    
-                    
-                        
+                     
                         {courses.map(course => <Card key={course.cid} course={course} />)}
                          
-                    
-               
+                                   
                     
 
                 {/* </Grid> */}

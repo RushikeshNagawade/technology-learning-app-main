@@ -1,2 +1,2 @@
-# react-technology-learning-app-main
- React js
+# technology-learning-app
+ Technology learning app in React

@@ -32,7 +32,7 @@ export default class Course5 extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8082/coursebyname/angular")
+        axios.get("http://localhost:8082/api/coursebyname/angular")
         .then(response => response.data)
         .then((data) => {
             this.setState({course : data});

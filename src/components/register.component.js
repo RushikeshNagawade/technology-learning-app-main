@@ -3,8 +3,6 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
-import Image from "../images/about5.jpg"
-
 
 import AuthService from "../services/auth.service";
 
@@ -124,8 +122,7 @@ export default class Register extends Component {
 
   render() {
     return (
-      <div style={{ backgroundImage: `url(${Image})` }}>
-      <div className="col-md-12" >
+      <div className="col-md-12">
         <div className="card card-container">
           <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -176,7 +173,7 @@ export default class Register extends Component {
                     validations={[required, vpassword]}
                   />
                 </div>
-                  <br></br>
+                <br></br>
                 <div className="form-group" align="center">
                   <button className="btn btn-primary btn-block">Sign Up</button>
                 </div>
@@ -205,7 +202,6 @@ export default class Register extends Component {
             />
           </Form>
         </div>
-      </div>
       </div>
     );
   }

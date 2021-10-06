@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
+//import "C:/MyExes/bootstrap-4.0.0/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -7,31 +8,32 @@ import AuthService from "./services/auth.service";
 
 import Login from "./components/login.component";
 import Register from "./components/register.component";
-// import Home from "./components/home.component";
+import Home from "./components/pages/Home";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
-import CourseCardMat from "./controller/CourseCardMat";
-import CourseTable from "./controller/CourseTable"
-import CourseCard from "./controller/CourseCard"
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
-import Course from "./controller/Course";
-
-import ListApp from "./components/ListApp";
-import Cards from "./controller/Card";
-import CourseMain from "./controller/CourseTable";
-import CourseSearch from "./components/CourseSearch";
-import CourseView from "./controller/CourseView";
-import View from "./controller/View";
-import Test from "./controller/Test";
-import CourseHome from "./controller/CourseHome";
-import Home from "./components/pages/Home";
+import AdminMain from "./controller/AdminMain";
+import CourseAll from "./controller/CourseAll";
+import DeleteCourse from "./controller/deleteCourse";
+import Updatecourse from "./controller/updateCourse";
+import PostCourse from "./controller/postCourse";
+import TraineeAll from "./controller/TraineeAllMod";
+import UpdateTrainee from "./controller/updateTraineeMod";
+import TraineeAllAdmin from "./controller/TraineeAllAdmin";
+import DeleteTrainee from "./controller/deleteTrainee";
+import createTrainee from "./controller/createTrainee";
+// import CourseCard from "./controller/CourseCard";
+// import CourseHome from "./controller/CourseHome";
 import ABOUT from "./components/pages/About";
 import CONTACT from "./components/pages/Contact";
 import CardFinal from "./controller/CardFinal";
+import CardView from "./controller/CardView";
+// import userUpdate from "./controller/userUpdate";
+
 import Course3 from "./components/courses/Course3";
 import Course1 from "./components/courses/Course1";
 import Course2 from "./components/courses/Course2";
@@ -42,7 +44,8 @@ import Course7 from "./components/courses/Course7";
 import Course8 from "./components/courses/Course8";
 import Course9 from "./components/courses/Course9";
 import Course10 from "./components/courses/Course10";
-import CardView from "./controller/CardView";
+import CourseSearch from "./controller/CourseSearch";
+
 
 class App extends Component {
   constructor(props) {
@@ -58,6 +61,8 @@ class App extends Component {
 
   componentDidMount() {
     const user = AuthService.getCurrentUser();
+
+    
 
     if (user) {
       this.setState({
@@ -89,7 +94,8 @@ class App extends Component {
     const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
 
     return (
-      <div>
+      
+      <div >
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="navbar-brand">
             UpMaster
@@ -103,8 +109,6 @@ class App extends Component {
 
             
 
-              
-
             {showModeratorBoard && (
               <li className="nav-item">
                 <Link to={"/mod"} className="nav-link">
@@ -112,6 +116,15 @@ class App extends Component {
                 </Link>
               </li>
             )}
+
+            {/* {showModeratorBoard && (
+              <li className="nav-item">
+                <Link to={"/moddata"} className="nav-link">
+                  Moderator Data
+                </Link>
+              </li>
+            )} */}
+
 
             {showAdminBoard && (
               <li className="nav-item">
@@ -121,17 +134,28 @@ class App extends Component {
               </li>
             )}
 
+            {/* {showAdminBoard && (
+              <li className="nav-item">
+                <Link to={"/admindata"} className="nav-link">
+                  Admin Data
+                </Link>
+              </li>
+            )} */}
+
             {currentUser && (
-              <div className="nav-item">
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
                   User
                 </Link>
               </li>
-              
-              
-            </div>
             )}
+            {/* {currentUser && (
+              <li className="nav-item">
+                <Link to={"/usercreate"} className="nav-link">
+                  Create Profile
+                </Link>
+              </li>
+            )} */}
           </div>
 
           {currentUser ? (
@@ -140,12 +164,11 @@ class App extends Component {
                 <Link to={"/profile"} className="nav-link">
                   {currentUser.username}
                 </Link>
-                
               </li>
-              
+
               <li className="nav-item">
                 <Link to={"/allcourses"} className="nav-link">
-                  View Courses
+                  All Courses
                 </Link>
               </li>
               <li className="nav-item">
@@ -182,9 +205,25 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
+            <Route path="/user" component={BoardUser} />
+            <Route path="/usercreate" component={createTrainee} />
+            <Route path="/mod" component={BoardModerator} />
+            {/* <Route path="/moddata" component={ModeratorJava} /> */}
+            <Route path="/admin" component={BoardAdmin} />
+            <Route path="/getallcourse" component={CourseAll} />
+            <Route path="/getalltrainee" component={TraineeAll} />
+            <Route path="/getalltraineeadmin" component={TraineeAllAdmin} />
+            <Route path="/admindata" component={AdminMain} />
+            <Route path="/postcourse" component={PostCourse}></Route>
+            <Route path="/updatecourse/:cid" component={Updatecourse}></Route>
+            <Route path="/deletecourse/:cid" component={DeleteCourse}></Route>
+            <Route path="/deletetrainee/:tid" component={DeleteTrainee}></Route>
+            <Route path="/updatetraineemod/:tid" component={UpdateTrainee} /> 
+
             <Route exact path="/allcourses" component={CardView} />
             <Route exact path="/aboutus" component={ABOUT} />
             <Route exact path="/contact" component={CONTACT} />
+
             <Route exact path="/viewcourse/403" component={Course3} />
             <Route exact path="/viewcourse/401" component={Course1} />
             <Route exact path="/viewcourse/402" component={Course2} />
@@ -196,13 +235,6 @@ class App extends Component {
             <Route exact path="/viewcourse/409" component={Course9} />
             <Route exact path="/viewcourse/410" component={Course10} />
             <Route exact path="/searchcourse" component={CourseSearch} />
-
-            {/* <Route exact path="/viewcourse/:cname" component={CourseHome} /> */}
-            
-            
-            <Route path="/user" component={BoardUser} />
-            <Route path="/mod" component={BoardModerator} />
-            <Route path="/admin" component={BoardAdmin} />
           </Switch>
         </div>
 

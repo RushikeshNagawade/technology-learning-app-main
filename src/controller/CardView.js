@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import axios from "axios";
+import courseservice from '../services/courseservice';
 
 import {
     Grid,
@@ -28,18 +29,26 @@ class CardView extends Component {
 
     componentDidMount() {
 
-        axios
-        .get("http://localhost:8082/getallcourses")
-        .then(response => response.data)
-        .then((data) => {
-            this.setState({ course: data })
+        // axios
+        // .get("http://localhost:8082/getallcourses")
+        // .then(response => response.data)
+        // .then((data) => {
+        //     this.setState({ course: data })
 
-            console.log(data);
-        })
+        //     console.log(data);
+        // })
         
+        // .catch((error) => {
+        //     console.log(error.message)
+        // })
+
+        courseservice.getCourses().then((response) => {
+            this.setState({ course: response.data})
+        })
         .catch((error) => {
             console.log(error.message)
         })
+
         
 
 
