@@ -6,7 +6,7 @@ import {
     Link
   } from 'react-router-dom'
   import { Navbar, Nav } from 'react-bootstrap'
-import axios from 'axios';
+
 
 
 
@@ -24,7 +24,7 @@ class CourseSearch extends Component {
         console.warn(key)
         // CourseServiceControl.getCourseById(key).then((data) => {
         this.setState({lastSearch:key})
-        fetch("/coursebyname/"+key).then((data) => {
+        fetch("/api/coursebyname/"+key).then((data) => {
             data.json().then((resp) => {
                 console.warn("resp", resp)
                 if(resp.length>0)
@@ -96,7 +96,7 @@ class CourseSearch extends Component {
                         // :""
                     }
                     {
-                        this.state.noData?<h3>Unfortunately we do not have this course .</h3>:null
+                        this.state.noData?<h3>Unfortunately we do not have this course . Stay tuned, More Courses Coming soon</h3>:null
                     } 
                 </div>
 
