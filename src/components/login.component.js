@@ -83,7 +83,6 @@ export default class Login extends Component {
   render() {
     return (
       <div style={{ backgroundImage: `url(${Image})` }}>
-        
       <div className="col-md-12">
         <div className="card card-container">
           <img

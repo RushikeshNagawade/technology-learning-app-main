@@ -32,10 +32,9 @@ import Home from "./components/pages/Home";
 import ABOUT from "./components/pages/About";
 import CONTACT from "./components/pages/Contact";
 import CardFinal from "./controller/CardFinal";
-
+import Course3 from "./components/courses/Course3";
 import Course1 from "./components/courses/Course1";
 import Course2 from "./components/courses/Course2";
-import Course3 from "./components/courses/Course3";
 import Course4 from "./components/courses/Course4";
 import Course5 from "./components/courses/Course5";
 import Course6 from "./components/courses/Course6";
@@ -186,10 +185,9 @@ class App extends Component {
             <Route exact path="/allcourses" component={CardView} />
             <Route exact path="/aboutus" component={ABOUT} />
             <Route exact path="/contact" component={CONTACT} />
-            
+            <Route exact path="/viewcourse/403" component={Course3} />
             <Route exact path="/viewcourse/401" component={Course1} />
             <Route exact path="/viewcourse/402" component={Course2} />
-            <Route exact path="/viewcourse/403" component={Course3} />
             <Route exact path="/viewcourse/404" component={Course4} />
             <Route exact path="/viewcourse/405" component={Course5} />
             <Route exact path="/viewcourse/406" component={Course6} />
